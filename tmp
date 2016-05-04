@@ -1,0 +1,4 @@
+document.querySelector('frame').contentWindow.document.querySelectorAll('input[type="radio"]')[0].checked = true;
+document.querySelector('frame').contentWindow.document.querySelectorAll('input[type="radio"]')[4].checked = true;
+document.querySelector('frame').contentWindow.document.querySelectorAll('input[type="radio"]')[6].checked = true;
+document.querySelector('frame').contentWindow.document.querySelectorAll('input[type="radio"]')[9].checked = true;

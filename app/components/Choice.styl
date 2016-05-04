@@ -1,0 +1,108 @@
+.joinCreateRoom
+  background-color #181818
+  height calc(100vh - 40px)
+  overflow hidden
+  padding-top 40px
+  width 100vw
+  // font-family 'Architects Daughter', cursive
+  // ::-webkit-input-placeholder
+    // font-family 'Architects Daughter', cursive
+
+.joinChoice
+  position absolute
+  background-color rgb(46, 62, 88)
+  width 630px
+  height 400px
+  top calc(50% - 200px)
+  left calc(50% - 300px)
+  display flex
+  justify-content center
+  align-items center
+
+.joinContent
+  width 200px
+  height 300px
+  margin-left -310px
+  display flex
+  flex-direction column
+  justify-content center
+  align-items center
+  input
+    border none
+    margin-top 10px
+    padding 3px
+    background-color transparent
+    border-bottom 2px solid #80DB7F
+    // font-family 'Architects Daughter', cursive
+    font-size 1em
+    color #FFFFFF
+    height 30px
+    &:focus
+      outline none
+
+.createChoice
+  position absolute
+  width 350px
+  height 400px
+  background-color rgb(28, 39, 59)
+  top calc(50% - 200px - 4px)
+  left calc(50% - 20px - 4px)
+  -webkit-clip-path polygon(20% 0, 100% 0%, 100% 100%, 0 100%)
+  box-shadow 5px 5px 4px 0px rgba(13, 13, 13, 0.5)
+  display flex
+  justify-content center
+  align-items center
+
+.createContent
+  width 200px
+  height 300px
+  margin-left 50px
+  margin-top 12px
+  display flex
+  flex-direction column
+  justify-content center
+  align-items center
+  input
+    border none
+    margin-top 10px
+    padding 3px
+    background-color transparent
+    border-bottom 2px solid #80DB7F
+    // font-family 'Architects Daughter', cursive
+    font-size 1em
+    color #FFFFFF
+    height 30px
+    &:focus
+      outline none
+
+.cancel
+  position absolute
+  width 40px
+  height 40px
+  margin-left calc(50% + 285px - 4px)
+  margin-top calc(130px - 4px)
+  &:hover
+    cursor pointer
+    .crossOne
+      animation dashOne .2s .2s cubic-bezier(.5, 0, .5, 1) forwards
+    .crossTwo
+      animation dashTwo .2s cubic-bezier(.5, 0, .5, 1) forwards
+
+.crossOne
+  stroke-dasharray 25
+  stroke-dashoffset 26
+
+.crossTwo
+  stroke-dasharray 23
+  stroke-dashoffset -22
+
+@keyframes dashTwo
+  from
+    stroke-dashoffset -22
+  to
+    stroke-dashoffset 0
+@keyframes dashOne
+  from
+    stroke-dashoffset 26
+  to
+    stroke-dashoffset 0
