@@ -73,7 +73,7 @@ export default class Home extends Component {
         this.props.getPlayInfo(this.props.remotePlayStatus.uri.split(":")[2]);
       }
     } else {
-      console.log('not in room');
+      // console.log('not in room');
     }
   }
 

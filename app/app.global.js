@@ -68,22 +68,23 @@ export default StyleSheet.create({
     },
     "userInfo": {
         "width": 200,
+        "marginLeft": -20,
         "height": 35,
         "lineHeight": 40,
         "display": "flex",
-        "justifyContent": "flex-start",
+        "justifyContent": "flex-end",
         "alignItems": "center",
         "cursor": "pointer"
     },
     "userInfo span": {
-        "fontSize": 1.2,
+        "fontSize": 1,
         "lineHeight": 40
     },
     "userInfo img": {
-        "width": 30,
-        "height": 30,
+        "width": 26,
+        "height": 26,
         "borderRadius": "50%",
-        "marginLeft": 25,
+        "marginLeft": 15,
         "boxShadow": "0px 0px 4px 0px #121212"
     },
     "status": {

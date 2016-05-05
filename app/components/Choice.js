@@ -40,14 +40,14 @@ export default class Choice extends Component {
               <i className="fa fa-home fa-3x" />
               <input ref="create" placeholder="Create your own..." />
             </div>
+            <div className={styles.cancel} onClick={this.handleCancel}>
+              <svg width={40} height={40}>
+                <circle cx="20" cy="20" r="15" style={{"fill": "none", "stroke": "#FFFFFF", "strokeWidth": "2", "strokeLinecap": "round"}}/>
+                <path className={styles.crossOne} d="M 12.5 12.5 L 27.5 27.5" style={{"fill": "none", "stroke": "#FFFFFF", "strokeWidth": "3", "strokeLinecap": "round"}}/>
+                <path className={styles.crossTwo} d="M 12.5 27.5 L 27.5 12.5" style={{"fill": "none", "stroke": "#FFFFFF", "strokeWidth": "3", "strokeLinecap": "round"}}/>
+              </svg>
+            </div>
           </form>
-          <div className={styles.cancel} onClick={this.handleCancel}>
-            <svg width={40} height={40}>
-              <circle cx="20" cy="20" r="15" style={{"fill": "none", "stroke": "#FFFFFF", "strokeWidth": "2", "strokeLinecap": "round"}}/>
-              <path className={styles.crossOne} d="M 12.5 12.5 L 27.5 27.5" style={{"fill": "none", "stroke": "#FFFFFF", "strokeWidth": "3", "strokeLinecap": "round"}}/>
-              <path className={styles.crossTwo} d="M 12.5 27.5 L 27.5 12.5" style={{"fill": "none", "stroke": "#FFFFFF", "strokeWidth": "3", "strokeLinecap": "round"}}/>
-            </svg>
-          </div>
         </div>
     );
   }

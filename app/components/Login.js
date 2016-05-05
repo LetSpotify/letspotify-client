@@ -30,7 +30,7 @@ export default class Login extends Component {
         console.log('start checking');
         clearInterval(validateToken);
       }
-      console.log('login first');
+      // console.log('login first');
     }, 1000);
   }
 

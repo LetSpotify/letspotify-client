@@ -34,14 +34,7 @@ export default class RoomMenu extends Component {
       <div className={styles.roomMenu}>
         <div className={styles.roomFilter}>
           <div className={styles.inputWrapper}>
-            <input id="filter" onChange={this.handleChange} placeholder="Room name..." />
-          </div>
-          <div className={styles.roomAdd} onClick={this.handleNewRoom}>
-            <svg width={40} height={40}>
-              <circle cx="20" cy="20" r="15" style={{"fill": "none", "stroke": "#FFFFFF", "strokeWidth": "2", "strokeLinecap": "round"}}/>
-              <path className={styles.addOne} d="M 20 10 L 20 30" style={{"fill": "none", "stroke": "#FFFFFF", "strokeWidth": "3", "strokeLinecap": "round"}}/>
-              <path className={styles.addTwo} d="M 10 20 L 30 20" style={{"fill": "none", "stroke": "#FFFFFF", "strokeWidth": "3", "strokeLinecap": "round"}}/>
-            </svg>
+            <input id="filter" onChange={this.handleChange} placeholder="Filter Room..." />
           </div>
         </div>
         <div className={styles.roomList}>
@@ -56,6 +49,14 @@ export default class RoomMenu extends Component {
               )
             })
           }
+          <div className={styles.roomAdd} onClick={this.handleNewRoom}>
+            <svg width={200} height={190}>
+              <circle cx="100" cy="100" r="85" style={{"fill": "none", "stroke": "#22272C", "strokeWidth": "4", "strokeLinecap": "round"}}/>
+              <path className={styles.addOne} d="M 100 50 L 100 150" style={{"fill": "none", "stroke": "#22272C", "strokeWidth": "7", "strokeLinecap": "round"}}/>
+              <path className={styles.addTwo} d="M 50 100 L 150 100" style={{"fill": "none", "stroke": "#22272C", "strokeWidth": "7", "strokeLinecap": "round"}}/>
+            </svg>
+            <span>New room</span>
+          </div>
         </div>
       </div>
     );
