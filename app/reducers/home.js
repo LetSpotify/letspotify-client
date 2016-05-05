@@ -6,7 +6,7 @@ import {
 const initialState = {
   curRoomID: "",
   userInfo: {},
-  status: "login",
+  status: "login-init",
   roomList: [
   ],
   showList: [
@@ -262,7 +262,8 @@ export default handleActions({
   },
   LOGOUT: (state, action) => {
     return {
-      ...initialState
+      ...initialState,
+      status: "login"
     }
   },
   TOKEN_EXPIRE: (state, action) => {
@@ -292,6 +293,20 @@ export default handleActions({
         csrf: action.payload.token ? action.payload.token : "",
         port: action.payload.port ? action.payload.port : 0
       }
+    };
+  },
+  LOCAL_STATUS_ERROR: (state, action) => {
+    return {
+      ...state,
+      status: !action.payload.running ? "login-restart" : state.status,
+      role: "",
+      msg: !action.payload.running ? action.payload.error.message : ""
+    };
+  },
+  INIT_SUCCESS: (state, action) => {
+    return {
+      ...state,
+      status: "login"
     };
   },
   default: {

@@ -20,6 +20,8 @@ export const tokenExpire = createAction('TOKEN_EXPIRE');
 export const loginPending = createAction('LOGIN_PENDING');
 export const getUserRoomList = createAction('GET_USER_ROOM_LIST', WebAPIUtil.getUserRoomList);
 export const sendLocalPlayStatus = createAction('SEND_LOCAL_PLAY_STATUS', WebAPIUtil.sendInfo);
+export const localStatusError = createAction('LOCAL_STATUS_ERROR');
+export const initSuccess = createAction('INIT_SUCCESS');
 
 export const getSpotifyOAuthToken = createAction('GET_SPOTIFY_OAUTH_TOKEN');
 export const getSpotifyCSRFToken = createAction('GET_SPOTIFY_CSRF_TOKEN');

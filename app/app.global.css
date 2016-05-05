@@ -9,7 +9,7 @@ body {
   position: relative;
   color: white;
   height: 100vh;
-  background-color: #181818;
+  background-color: rgb(34, 39, 44);
   overflow: hidden;
   font-family: "pingfang sc", "Microsoft JhengHei";
   margin: 0;
@@ -37,91 +37,73 @@ li {
   list-style: none;
 }
 
-.windowControl {
-  position: fixed;
+.windowNav {
+  position: relative;
+  height: 35px;
+  background-color: #FFFBFA;
+  color: #2F302F;
   display: flex;
-  height: 40px;
-  width: 100vw;
-  background-color: #EDEEF4;
 }
 
-.windowTitle {
-  min-width: 100vw;
-  max-width: 100vw;
-  margin-left: -25px;
-  color: #131313;
+.windowControl {
+  width: 75px;
+  height: 35px;
 }
-.controlWrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  width: 60px;
-  padding-left: 5px;
-  padding-right: 5px;
-  height: 40px;
-}
-.controlButton {
-  width: 20px;
-  height: 20px;
-}
-.controlButton:hover {
-  cursor: pointer;
-}
-.controlButton svg {
-  opacity: .3;
-  transform: scale(.7);
-  transition: all .2s;
-}
-.controlButton:hover svg {
-  opacity: 8;
-  transform: scale(1);
-  transition: all .2s;
-}
-.userInfo {
-  width: 200px;
-  height: 40px;
-  line-height: 40px;
-  margin-left: calc(100vw - 200px);
+
+.windowStatus {
+  width: calc(100vw - 75px);
+  height: 35px;
   display: flex;
   justify-content: flex-end;
 }
+
+.windowUserSection {
+  height: 35px;
+  width: 200px;
+}
+
+.windowTitle {
+  height: 35px;
+  width: calc(100% - 400px + 75px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userInfo {
+  width: 200px;
+  height: 35px;
+  line-height: 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
 .userInfo span {
-  margin-right: 10px;
   font-size: 1.2rem;
   line-height: 40px;
 }
 .userInfo img {
   width: 30px;
   height: 30px;
-  margin-top: 5px;
   border-radius: 50%;
-  box-shadow: 1px 1px 2px .5px #4F4F4F;
+  margin-left: 25px;
+  box-shadow: 0px 0px 4px 0px #121212;
 }
-.userInfo:hover {
-  cursor: pointer;
-}
+
 .status {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  /*justify-content: center;*/
-  height: 40px;
-  width: 50vw;
-  margin-left: 80px;
+  height: 35px;
+  line-height: 35px;
 }
 .status.copy {
-  width: 150px;
   height: 30px;
+  line-height: 25px;
   border: 1.6px solid rgb(28, 39, 59);
-  margin-top: 5px;
   border-radius: 5px;
   outline: none;
   background-color: transparent;
   display: flex;
   justify-content: center;
-}
-.status.copy:hover {
   cursor: pointer;
 }
 .status.copy:active {

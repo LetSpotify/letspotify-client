@@ -10,7 +10,7 @@ export default StyleSheet.create({
         "position": "relative",
         "color": "white",
         "height": 100 * vh,
-        "backgroundColor": "#181818",
+        "backgroundColor": "rgb(34, 39, 44)",
         "overflow": "hidden",
         "fontFamily": "pingfang sc\", \"Microsoft JhengHei",
         "marginTop": 0,
@@ -38,89 +38,67 @@ export default StyleSheet.create({
     "li": {
         "listStyle": "none"
     },
+    "windowNav": {
+        "position": "relative",
+        "height": 35,
+        "backgroundColor": "#FFFBFA",
+        "color": "#2F302F",
+        "display": "flex"
+    },
     "windowControl": {
-        "position": "fixed",
-        "display": "flex",
-        "height": 40,
-        "width": 100 * vw,
-        "backgroundColor": "#EDEEF4"
+        "width": 75,
+        "height": 35
     },
-    "windowTitle": {
-        "minWidth": 100 * vw,
-        "maxWidth": 100 * vw,
-        "marginLeft": -25,
-        "color": "#131313"
-    },
-    "controlWrapper": {
-        "display": "flex",
-        "flexDirection": "row",
-        "justifyContent": "space-around",
-        "alignItems": "center",
-        "width": 60,
-        "paddingLeft": 5,
-        "paddingRight": 5,
-        "height": 40
-    },
-    "controlButton": {
-        "width": 20,
-        "height": 20
-    },
-    "controlButton:hover": {
-        "cursor": "pointer"
-    },
-    "controlButton svg": {
-        "opacity": 0.3,
-        "transform": "scale(.7)",
-        "transition": "all .2s"
-    },
-    "controlButton:hover svg": {
-        "opacity": 8,
-        "transform": "scale(1)",
-        "transition": "all .2s"
-    },
-    "userInfo": {
-        "width": 200,
-        "height": 40,
-        "lineHeight": 40,
-        "marginLeft": "calc(100vw - 200px)",
+    "windowStatus": {
+        "width": "calc(100vw - 75px)",
+        "height": 35,
         "display": "flex",
         "justifyContent": "flex-end"
     },
+    "windowUserSection": {
+        "height": 35,
+        "width": 200
+    },
+    "windowTitle": {
+        "height": 35,
+        "width": "calc(100% - 400px + 75px)",
+        "display": "flex",
+        "alignItems": "center",
+        "justifyContent": "center"
+    },
+    "userInfo": {
+        "width": 200,
+        "height": 35,
+        "lineHeight": 40,
+        "display": "flex",
+        "justifyContent": "flex-start",
+        "alignItems": "center",
+        "cursor": "pointer"
+    },
     "userInfo span": {
-        "marginRight": 10,
         "fontSize": 1.2,
         "lineHeight": 40
     },
     "userInfo img": {
         "width": 30,
         "height": 30,
-        "marginTop": 5,
         "borderRadius": "50%",
-        "boxShadow": "1px 1px 2px .5px #4F4F4F"
-    },
-    "userInfo:hover": {
-        "cursor": "pointer"
+        "marginLeft": 25,
+        "boxShadow": "0px 0px 4px 0px #121212"
     },
     "status": {
-        "position": "absolute",
-        "display": "flex",
-        "alignItems": "center",
-        "height": 40,
-        "width": 50 * vw,
-        "marginLeft": 60
+        "height": 35,
+        "lineHeight": 35
     },
     "statuscopy": {
-        "width": 150,
         "height": 30,
+        "lineHeight": 25,
         "border": "1.6px solid rgb(28, 39, 59)",
-        "marginTop": 5,
         "borderRadius": 5,
         "outline": "none",
         "backgroundColor": "transparent",
         "display": "flex",
-        "justifyContent": "center"
-    },
-    "statuscopy:hover": {
+        "justifyContent": "center",
         "cursor": "pointer"
     },
     "statuscopy:active": {

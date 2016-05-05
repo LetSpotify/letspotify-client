@@ -12,16 +12,16 @@ export default class PlayInfo extends Component {
       <div className={styles.roomInfo}>
         <div className={styles.playInfo}>
           <div className={styles.playPic}>
-            <img src={Object.keys(this.props.playInfo).length ? this.props.playInfo.album.images[1].url : ""} />
+            <img src={Object.keys(this.props.playInfo).length ? this.props.playInfo.album ? this.props.playInfo.album.images[1].url : "" : ""} />
           </div>
           <div className={styles.songName}>
             {this.props.playInfo.name}
           </div>
           <div className={styles.albumName}>
-            {Object.keys(this.props.playInfo).length ? this.props.playInfo.album.name : ""}
+            {Object.keys(this.props.playInfo).length ? this.props.playInfo.album ? this.props.playInfo.album.name : "" : ""}
           </div>
           <div className={styles.singerName}>
-            {Object.keys(this.props.playInfo).length ? this.props.playInfo.artists[0].name : ""}
+            {Object.keys(this.props.playInfo).length ? this.props.playInfo.artists ? this.props.playInfo.artists[0].name : "" : ""}
           </div>
         </div>
         <ul className={styles.members}>

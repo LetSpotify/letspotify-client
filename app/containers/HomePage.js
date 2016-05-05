@@ -46,25 +46,29 @@ export default class HomePage extends Component {
   render() {
     return (
       <div>
-        <div className="windowControl">
-          <div className="windowTitle">
-            {
-              this.props.status.slice(0, 5) === "login" ?
-              <div className="nothing"></div> :
-              <div>
-                {
-                  this.props.status === "inRoom" ?
-                  <CopyToClipboard className="status copy" text={this.props.curRoomID}>
-                    <button>Copy Room ID</button>
-                  </CopyToClipboard> :
-                  <div className="status">{this.props.status}</div>
-                }
-                <div className="userInfo" onClick={this.handleUser}>
+        <div className="windowNav">
+          <div className="windowControl">
+          </div>
+          <div className="windowStatus">
+            <div className="windowTitle">
+              {
+                this.props.status === "inRoom" ?
+                <CopyToClipboard className="status copy" text={this.props.curRoomID}>
+                  <button>Copy Room ID</button>
+                </CopyToClipboard> :
+                <div className="status">LetSpotify</div>
+              }
+            </div>
+            <div className="windowUserSection">
+              {
+                this.props.status.slice(0, 5) !== "login" ?
+                <div className="userInfo">
                   <span>{this.props.userInfo.name}</span>
-                  <img src={"https://graph.facebook.com/" +this.props.userInfo.fid + "/picture?type=large"} className="userPic"></img>
-                </div>
-              </div>
-            }
+                  <img onClick={this.handleUser} src={"https://graph.facebook.com/" +this.props.userInfo.fid + "/picture?type=large"} className="userPic"></img>
+                </div> :
+                <div className="nothing"></div>
+              }
+            </div>
           </div>
         </div>
         <Home {...this.props}/>
@@ -86,7 +90,6 @@ function mapStateToProps(state) {
     localPlayStatus: state.home.localPlayStatus,
     playInfo: state.home.playInfo,
     loginInfo: state.home.loginInfo,
-    spotifyInfo: state.home.spotifyInfo,
     msg: state.home.msg
   };
 }

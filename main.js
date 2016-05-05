@@ -63,7 +63,7 @@ app.on('ready', () => {
         parseJSON.playing = status.playing ? true : false;
         parseJSON.position = status.playing_position ? Math.floor(status.playing_position) : 0;
         parseJSON.duration = status.track ? status.track.length : 0;
-        parseJSON.uri = status.track.track_resource ? status.track.track_resource.uri : "";
+        parseJSON.uri = status.track ? status.track.track_resource ? status.track.track_resource.uri : "" : "";
         parseJSON.time = status.server_time ? status.server_time : 0;
         event.sender.send('local-status-running', parseJSON, rid);
       } else {

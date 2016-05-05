@@ -9,6 +9,8 @@ import RoomMenu from './RoomMenu';
 import Choice from './Choice';
 import RoomMain from './RoomMain';
 import Login from './Login';
+import Init from './Init';
+import Restart from './Restart';
 
 const ipcRenderer = require('electron').ipcRenderer;
 const ToastMessageFactory = React.createFactory(ToastMessage.animation);
@@ -33,16 +35,25 @@ export default class Home extends Component {
   }
 
   handleLocalStatusError(error) {
-    console.log(error);
+    if (error.error) {
+      this.props.localStatusError(error);
+    }
   }
 
   handleLocalStatus(localStatus, rid) {
-    const currentLocalStatus = this.props.localPlayStatus;
-    if (currentLocalStatus.uri !== localStatus.uri || (Math.abs((currentLocalStatus.time - currentLocalStatus.position) - (localStatus.time - localStatus.position)) > 3) || localStatus.playing !== currentLocalStatus.playing) {
-      this.props.updateLocalPlayStatus(localStatus);
-      var sendStatus = localStatus;
-      sendStatus.rid = rid;
-      this.props.sendLocalPlayStatus(sendStatus);
+    if (this.props.status.slice(0, 5) !== "login") {
+      const currentLocalStatus = this.props.localPlayStatus;
+      const current = currentLocalStatus.time - currentLocalStatus.position;
+      const local = localStatus.time - localStatus.position;
+      const needSync = Math.abs(current - local) > 5;
+      if (currentLocalStatus.uri !== localStatus.uri || currentLocalStatus.playing !== localStatus.playing || needSync) {
+        this.props.updateLocalPlayStatus(localStatus);
+        var sendStatus = localStatus;
+        sendStatus.rid = rid;
+        this.props.sendLocalPlayStatus(sendStatus);
+      }
+    } else if (this.props.status === 'login-init') {
+      this.props.initSuccess();
     }
   }
 
@@ -50,7 +61,7 @@ export default class Home extends Component {
 
     if (this.props.role === "master") {
       ipcRenderer.send('getLocalSpotifyStatus', this.props.curRoomID);
-      if (!Object.keys(this.props.playInfo).length || this.props.localPlayStatus.uri !== this.props.playInfo.uri) {
+      if (!Object.keys(this.props.playInfo).length && this.props.playInfo.uri || this.props.localPlayStatus.uri !== this.props.playInfo.uri) {
         this.props.getPlayInfo(this.props.localPlayStatus.uri.split(":")[2]);
       }
     } else if (this.props.role === "client") {
@@ -58,7 +69,7 @@ export default class Home extends Component {
       if (Object.keys(this.props.remotePlayStatus).length) {
         ipcRenderer.send('playerControl', this.props.remotePlayStatus);
       }
-      if (!Object.keys(this.props.playInfo).length || this.props.remotePlayStatus.uri !== this.props.playInfo.uri) {
+      if (!Object.keys(this.props.playInfo).length && this.props.playInfo.uri || this.props.remotePlayStatus.uri !== this.props.playInfo.uri) {
         this.props.getPlayInfo(this.props.remotePlayStatus.uri.split(":")[2]);
       }
     } else {
@@ -76,13 +87,19 @@ export default class Home extends Component {
           className="toast-top-right"
         />
         {
-          this.props.status.slice(0, 5) === "login" ?
-          <Login {...this.props} /> :
-            this.props.status === "newRoom" ?
-              <Choice {...this.props}/> :
-              this.props.status === "menu" ?
-                <RoomMenu {...this.props} /> :
-                <RoomMain {...this.props} />
+          this.props.status === "login-init" ?
+          <Init {...this.props} /> :
+            this.props.status === "login-restart" ?
+            <Restart /> :
+              this.props.status.slice(0, 5) === "login" ?
+              <Login {...this.props} /> :
+                this.props.status === "newRoom" ?
+                  <Choice {...this.props}/> :
+                  this.props.status === "menu" ?
+                    <RoomMenu {...this.props} /> :
+                    this.props.status === "inRoom" ?
+                      <RoomMain {...this.props} /> :
+                      <div>{this.props.status}</div>
         }
       </div>
     );

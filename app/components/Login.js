@@ -3,14 +3,12 @@ import styles from './Login.styl';
 const shell = require('electron').shell;
 const oauthUrl = 'https://api.letspotify.com/auth/facebook/login'
 
-
 export default class Login extends Component {
 
   constructor(props) {
     super(props);
     this.handleLogin = this.handleLogin.bind(this);
     this.handleClick = this.handleClick.bind(this);
-
     var that = this;
     var validateToken = setInterval(function () {
       if (that.props.loginInfo.token !== "") {
