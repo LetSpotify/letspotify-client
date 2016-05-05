@@ -45,8 +45,8 @@ app.on('window-all-closed', () => {
 app.on('ready', () => {
 
   mainWindow = new BrowserWindow({
-    width: 1200,
-    height: 700,
+    width: process.platform === 'darwin' ? 1200 : 1220,
+    height: process.platform === 'darwin' ? 700 : 740,
     resizable: false,
     titleBarStyle: 'hidden-inset'
   });
