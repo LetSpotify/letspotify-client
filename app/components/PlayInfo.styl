@@ -61,19 +61,27 @@
   margin 0
 
 .leaveRoom
+  position relative
   color white
   height 70px
-  display flex
-  align-items center
-  justify-content center
+  i
+    position absolute
+    line-height 70px
+    margin-left calc(50% - 15.6px)
+    transition all .3s ease
   span
+    position absolute
     font-size 1.2rem
-    &:before
-      content '\f08b'
-      font-family FontAwesome
-      font-size 2rem
-      transform rotate(100deg)
-
+    line-height 70px
+    margin-left 110px
+    opacity 0
   &:hover
     background-color #263551
     cursor pointer
+    span
+      margin-left 120px
+      opacity 1
+      transition all .5s .2s ease
+    i
+      margin-left 80px
+      transition all .5s ease
