@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styles from './PlayInfo.styl';
 import $ from 'jquery';
+var width = require('text-width');
 
 export default class PlayInfo extends Component {
 
@@ -10,41 +11,83 @@ export default class PlayInfo extends Component {
   }
 
   handleNameHover(e) {
-    const width = e.target.getBoundingClientRect().width;
-    if (width > 230 && !$(e.target).is(':animated')) {
+    const targetWidth = e.target.getBoundingClientRect().width;
+    if (targetWidth > 180 && !$(e.target).is(':animated')) {
       $(e.target).animate({
-        'margin-left': -(width + 20)
-      }, ((width + 20) / 25) * 1000, 'linear', function() {
-        $(this).css('margin-left', width - 40);
-        $(this).animate({
-          'margin-left': 0
-        }, ((width - 40) / 25) * 1000, 'linear', function() {
-        });
+        'margin-left': -(targetWidth + width("   ", {
+          family: "pingfang sc",
+          size: e.target === this.refs.songName ? 19 : 14
+        }))
+      }, ((targetWidth) / 25) * 1000, 'linear', function() {
+        $(this).css('margin-left', 0);
       });
     }
   }
 
   render() {
+
+    const songNameRepeat = width(this.props.playInfo.name, {
+      family: "pingfang sc",
+      size: 19
+    }) > 180;
+
+    const albumNameRepeat = this.props.playInfo.album ? width(this.props.playInfo.album.name, {
+      family: "pingfang sc",
+      size: 14
+    }) > 180 : false;
+
+    const singerNameRepeat = this.props.playInfo.artists ? width(this.props.playInfo.artists[0].name, {
+      family: "pingfang sc",
+      size: 14
+    }) > 180 : false;
+
     return (
       <div className={styles.roomInfo}>
         <div className={styles.playInfo}>
           <div className={styles.playPic}>
-            <img src={Object.keys(this.props.playInfo).length ? this.props.playInfo.album ? this.props.playInfo.album.images[1].url : "" : ""} />
+            <img src={this.props.playInfo.album ? this.props.playInfo.album.images[1].url : ""} />
           </div>
           <div className={styles.songName}>
-            <span onMouseOver={this.handleNameHover}>
+            <span ref="songName"  onMouseOver={this.handleNameHover}>
               {this.props.playInfo.name}
             </span>
+            &nbsp;
+            &nbsp;
+            {
+              songNameRepeat ?
+                <span>
+                  {this.props.playInfo.name}
+                </span> :
+                <div></div>
+            }
           </div>
-          <div className={styles.albumName}>
+          <div ref="albumName" className={styles.albumName}>
             <span onMouseOver={this.handleNameHover}>
-              {Object.keys(this.props.playInfo).length ? this.props.playInfo.album ? this.props.playInfo.album.name : "" : ""}
+              {this.props.playInfo.album ? this.props.playInfo.album.name : ""}
             </span>
+            &nbsp;
+            &nbsp;
+            {
+              albumNameRepeat ?
+              <span>
+                {this.props.playInfo.album.name}
+              </span> :
+              <div></div>
+            }
           </div>
-          <div className={styles.singerName}>
+          <div ref="singerName" className={styles.singerName}>
             <span onMouseOver={this.handleNameHover}>
-              {Object.keys(this.props.playInfo).length ? this.props.playInfo.artists ? this.props.playInfo.artists[0].name : "" : ""}
+              {this.props.playInfo.artists ? this.props.playInfo.artists[0].name : ""}
             </span>
+            &nbsp;
+            &nbsp;
+            {
+              singerNameRepeat ?
+              <span>
+                {this.props.playInfo.artists[0].name}
+              </span> :
+              <div></div>
+            }
           </div>
         </div>
         <ul className={styles.members}>

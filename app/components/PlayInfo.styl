@@ -22,6 +22,10 @@
     max-width 180px
     height auto
 
+.blank
+  height 30px
+  width 10px
+
 .songName
   font-size 1.2rem
   width calc(100% - 70px)
@@ -39,6 +43,7 @@
   font-size .9rem
   width calc(100% - 70px)
   height 20px
+  overflow hidden
   line-height 20px
   margin-left 35px
   color #DADADA
@@ -60,12 +65,14 @@
   height 70px
   display flex
   align-items center
+  justify-content center
   span
     font-size 1.2rem
     &:before
       content '\f08b'
       font-family FontAwesome
       font-size 2rem
+      transform rotate(100deg)
 
   &:hover
     background-color #263551

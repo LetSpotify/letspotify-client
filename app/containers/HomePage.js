@@ -51,13 +51,7 @@ export default class HomePage extends Component {
           </div>
           <div className="windowStatus">
             <div className="windowTitle">
-              {
-                this.props.status === "inRoom" ?
-                <CopyToClipboard className="status copy" text={this.props.curRoomID}>
-                  <button>Copy Room ID</button>
-                </CopyToClipboard> :
-                <div className="status">LetSpotify</div>
-              }
+              <div className="status">LetSpotify</div>
             </div>
             <div className="windowUserSection">
               {
