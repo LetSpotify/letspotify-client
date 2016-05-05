@@ -78,7 +78,6 @@ li {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  cursor: pointer;
 }
 .userInfo span {
   font-size: 1rem;
@@ -90,6 +89,50 @@ li {
   border-radius: 50%;
   margin-left: 15px;
   box-shadow: 0px 0px 4px 0px #121212;
+}
+
+.toggleMenu {
+  margin-left: 10px;
+  opacity: .5;
+}
+
+.toggleMenu:hover {
+  opacity: 1;
+}
+
+.userMenu {
+  position: absolute;
+  background-color: #F4F0EF;
+  margin-left: -150px;
+  margin-top: 40px;
+  border-radius: 3px;
+  width: 160px;
+  z-index: 0;
+}
+
+.userMenu::before {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  margin-left: 132px;
+  margin-top: -5px;
+  content: '';
+  background-color: #F4F0EF;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+.userMenuItem {
+  width: 130px;
+  padding-left: 30px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 3px;
+  -webkit-user-select: none;
+}
+.userMenuItem:hover {
+  background-color: #FFFFFF;
+  z-index: 1;
 }
 
 .status {

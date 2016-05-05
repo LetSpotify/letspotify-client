@@ -6,6 +6,7 @@ import {
 const initialState = {
   curRoomID: "",
   userInfo: {},
+  menuOpen: false,
   status: "login-init",
   roomList: [
   ],
@@ -308,6 +309,12 @@ export default handleActions({
       ...state,
       status: "login"
     };
+  },
+  TOGGLE_MENU: (state, action) => {
+    return {
+      ...state,
+      menuOpen: !state.menuOpen
+    }
   },
   default: {
     next(state, action) {

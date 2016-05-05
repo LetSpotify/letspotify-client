@@ -7,7 +7,6 @@ import CopyToClipboard from 'react-copy-to-clipboard';
 const remote = require('remote');
 
 
-
 export default class HomePage extends Component {
 
   static propTypes = {
@@ -21,7 +20,7 @@ export default class HomePage extends Component {
     this.handleQuit = this.handleQuit.bind(this);
     this.handleMinimize = this.handleMinimize.bind(this);
     this.handleFullScreen = this.handleFullScreen.bind(this);
-    this.handleUser = this.handleUser.bind(this);
+    this.handleUserMenu = this.handleUserMenu.bind(this);
   }
 
   handleQuit(e) {
@@ -38,9 +37,8 @@ export default class HomePage extends Component {
     e.preventDefault();
   }
 
-  handleUser(e) {
-    console.log('logout');
-    this.props.logout();
+  handleUserMenu(e) {
+    this.props.toggleMenu();
   }
 
   render() {
@@ -58,7 +56,15 @@ export default class HomePage extends Component {
                 this.props.status.slice(0, 5) !== "login" ?
                 <div className="userInfo">
                   <span>{this.props.userInfo.name}</span>
-                  <img onClick={this.handleUser} src={"https://graph.facebook.com/" +this.props.userInfo.fid + "/picture?type=large"} className="userPic"></img>
+                  <img src={"https://graph.facebook.com/" +this.props.userInfo.fid + "/picture?type=large"} className="userPic"></img>
+                  <i onClick={this.handleUserMenu} className="toggleMenu fa fa-chevron-down" />
+                  {
+                    this.props.menuOpen ?
+                      <div className="userMenu">
+                        <div onClick={this.props.logout} className="userMenuItem">Logout</div>
+                      </div> :
+                      <div></div>
+                  }
                 </div> :
                 <div className="nothing"></div>
               }
@@ -74,6 +80,7 @@ export default class HomePage extends Component {
 function mapStateToProps(state) {
   return {
     userInfo: state.home.userInfo,
+    menuOpen: state.home.menuOpen,
     status: state.home.status,
     curRoomID: state.home.curRoomID,
     roomList: state.home.roomList,
