@@ -113,6 +113,8 @@
     "redux-actions": "^0.9.1",
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.0.1",
+    "socket.io": "^1.4.6",
+    "socketio": "^1.0.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^2.0.0",
     "text-width": "^1.2.0",
