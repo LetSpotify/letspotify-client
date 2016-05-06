@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { MdAddCircleOutline } from 'react-icons/lib/md';
 import styles from './RoomMenu.styl';
 
 import Room from './Room';
@@ -50,11 +51,7 @@ export default class RoomMenu extends Component {
             })
           }
           <div className={styles.roomAdd} onClick={this.handleNewRoom}>
-            <svg width={200} height={190}>
-              <circle cx="100" cy="100" r="85" style={{"fill": "none", "stroke": "#22272C", "strokeWidth": "4", "strokeLinecap": "round"}}/>
-              <path className={styles.addOne} d="M 100 50 L 100 150" style={{"fill": "none", "stroke": "#22272C", "strokeWidth": "7", "strokeLinecap": "round"}}/>
-              <path className={styles.addTwo} d="M 50 100 L 150 100" style={{"fill": "none", "stroke": "#22272C", "strokeWidth": "7", "strokeLinecap": "round"}}/>
-            </svg>
+            <MdAddCircleOutline />
             <span>New room</span>
           </div>
         </div>

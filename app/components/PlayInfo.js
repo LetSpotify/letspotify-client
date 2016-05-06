@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from './PlayInfo.styl';
+import { MdExitToApp } from 'react-icons/lib/md';
 import $ from 'jquery';
 var width = require('text-width');
 
@@ -93,7 +94,7 @@ export default class PlayInfo extends Component {
         <ul className={styles.members}>
         </ul>
         <div className={styles.leaveRoom} onClick={this.props.leaveRoom}>
-          <i className="fa fa-sign-out fa-rotate-180 fa-2x" />
+          <MdExitToApp />
           <span>Leave</span>
         </div>
       </div>

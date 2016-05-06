@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { MdHome, MdSearch } from 'react-icons/lib/md'
 import styles from './Choice.styl';
 
 export default class Choice extends Component {
@@ -31,13 +32,13 @@ export default class Choice extends Component {
         <div className={styles.joinCreateRoom}>
           <div className={styles.joinChoice}>
             <form className={styles.joinContent} onSubmit={this.handleJoin}>
-              <i className="fa fa-search-plus fa-3x" />
+              <MdSearch />
               <input ref="join" placeholder="Join existing room..." />
             </form>
           </div>
           <form className={styles.createChoice} onSubmit={this.handleCreate}>
             <div className={styles.createContent}>
-              <i className="fa fa-home fa-3x" />
+              <MdHome />
               <input ref="create" placeholder="Create your own..." />
             </div>
             <div className={styles.cancel} onClick={this.handleCancel}>
