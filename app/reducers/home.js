@@ -26,7 +26,8 @@ const initialState = {
     csrf: "",
     port: 4370
   },
-  msg: ""
+  msg: "",
+  socket: {}
 }
 
 function inRoomList(list, roomID) {

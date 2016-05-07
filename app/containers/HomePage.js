@@ -91,7 +91,8 @@ function mapStateToProps(state) {
     localPlayStatus: state.home.localPlayStatus,
     playInfo: state.home.playInfo,
     loginInfo: state.home.loginInfo,
-    msg: state.home.msg
+    msg: state.home.msg,
+    socket: state.socket
   };
 }
 

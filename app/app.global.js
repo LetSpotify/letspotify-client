@@ -8,9 +8,9 @@ const {width, height, scale} = Dimensions.get("window"),
 export default StyleSheet.create({
     "body": {
         "position": "relative",
-        "color": "white",
+        "color": "#3B3E3C",
         "height": 100 * vh,
-        "backgroundColor": "rgb(34, 39, 44)",
+        "backgroundColor": "#E6E6E6",
         "overflow": "hidden",
         "fontFamily": "pingfang sc\", \"Microsoft JhengHei",
         "marginTop": 0,
@@ -41,8 +41,8 @@ export default StyleSheet.create({
     "windowNav": {
         "position": "relative",
         "height": 35,
-        "backgroundColor": "#FFFBFA",
-        "color": "#2F302F",
+        "backgroundColor": "#2C2E31",
+        "color": "#FEFEFE",
         "display": "flex"
     },
     "windowControl": {
@@ -95,7 +95,7 @@ export default StyleSheet.create({
     },
     "userMenu": {
         "position": "absolute",
-        "backgroundColor": "#F4F0EF",
+        "backgroundColor": "#26282A",
         "marginLeft": -150,
         "marginTop": 40,
         "borderRadius": 3,
@@ -109,7 +109,7 @@ export default StyleSheet.create({
         "marginLeft": 132,
         "marginTop": -5,
         "content": "''",
-        "backgroundColor": "#F4F0EF",
+        "backgroundColor": "#26282A",
         "transform": "rotate(45deg)",
         "zIndex": -1
     },
@@ -118,11 +118,12 @@ export default StyleSheet.create({
         "paddingLeft": 30,
         "height": 40,
         "cursor": "pointer",
+        "opacity": 0.6,
         "borderRadius": 3,
         "WebkitUserSelect": "none"
     },
     "userMenuItem:hover": {
-        "backgroundColor": "#FFFFFF",
+        "opacity": 1,
         "zIndex": 1
     },
     "status": {

@@ -9,7 +9,8 @@ body {
   position: relative;
   color: white;
   height: 100vh;
-  background-color: rgb(34, 39, 44);
+  background-color: #E6E6E6;
+  color: #3B3E3C;
   overflow: hidden;
   font-family: "pingfang sc", "Microsoft JhengHei";
   margin: 0;
@@ -40,8 +41,8 @@ li {
 .windowNav {
   position: relative;
   height: 35px;
-  background-color: #FFFBFA;
-  color: #2F302F;
+  background-color: #2C2E31;
+  color: #FEFEFE;
   display: flex;
 }
 
@@ -102,7 +103,7 @@ li {
 
 .userMenu {
   position: absolute;
-  background-color: #F4F0EF;
+  background-color: #26282A;
   margin-left: -150px;
   margin-top: 40px;
   border-radius: 3px;
@@ -117,7 +118,7 @@ li {
   margin-left: 132px;
   margin-top: -5px;
   content: '';
-  background-color: #F4F0EF;
+  background-color: #26282A;
   transform: rotate(45deg);
   z-index: -1;
 }
@@ -127,11 +128,12 @@ li {
   padding-left: 30px;
   height: 40px;
   cursor: pointer;
+  opacity: .6;
   border-radius: 3px;
   -webkit-user-select: none;
 }
 .userMenuItem:hover {
-  background-color: #FFFFFF;
+  opacity: 1;
   z-index: 1;
 }
 

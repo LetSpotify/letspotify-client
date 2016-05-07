@@ -19,6 +19,7 @@ export default class Home extends Component {
 
   constructor(props) {
     super(props);
+
     const handleLocalStatus = this.handleLocalStatus.bind(this);
     const handleLocalStatusError = this.handleLocalStatusError.bind(this);
     ipcRenderer.on('local-status-running', function(event, localStatus, rid) {
