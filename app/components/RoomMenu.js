@@ -17,13 +17,6 @@ export default class RoomMenu extends Component {
   handleChange(e) {
     e.preventDefault();
     this.props.filterRoomList(e.target.value);
-    // this.refs.toast.error(
-    //   "Welcome welcome welcome!!",
-    //   "You are now home my friend. Welcome home my friend.", {
-    //   timeOut: 3000,
-    //   extendedTimeOut: 1000,
-    //   closeButton: true,
-    // });
   }
 
   handleNewRoom(e) {

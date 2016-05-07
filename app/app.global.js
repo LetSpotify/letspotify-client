@@ -22,18 +22,8 @@ export default StyleSheet.create({
         "width": 8
     },
     "::-webkit-scrollbar-thumb": {
-        "backgroundColor": "rgba(125, 125, 125, .4)",
+        "backgroundColor": "rgba(26, 34, 44, .4)",
         "borderRadius": 10
-    },
-    "h2": {
-        "marginTop": 0,
-        "marginRight": 0,
-        "marginBottom": 0,
-        "marginLeft": 0,
-        "fontSize": 2.25,
-        "fontWeight": "bold",
-        "letterSpacing": -0.025,
-        "color": "#fff"
     },
     "li": {
         "listStyle": "none"
@@ -43,6 +33,7 @@ export default StyleSheet.create({
         "height": 35,
         "backgroundColor": "#2C2E31",
         "color": "#FEFEFE",
+        "WebkitUserSelect": "none",
         "display": "flex"
     },
     "windowControl": {
@@ -100,7 +91,7 @@ export default StyleSheet.create({
         "marginTop": 40,
         "borderRadius": 3,
         "width": 160,
-        "zIndex": 0
+        "zIndex": 1
     },
     "userMenu::before": {
         "position": "absolute",
@@ -110,8 +101,7 @@ export default StyleSheet.create({
         "marginTop": -5,
         "content": "''",
         "backgroundColor": "#26282A",
-        "transform": "rotate(45deg)",
-        "zIndex": -1
+        "transform": "rotate(45deg)"
     },
     "userMenuItem": {
         "width": 130,
@@ -123,8 +113,7 @@ export default StyleSheet.create({
         "WebkitUserSelect": "none"
     },
     "userMenuItem:hover": {
-        "opacity": 1,
-        "zIndex": 1
+        "opacity": 1
     },
     "status": {
         "height": 35,

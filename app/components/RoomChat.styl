@@ -3,12 +3,70 @@
   background-color #EEEFF4
   color #7A7B7D
 
-.ChatContent
+.chatContent
   display flex
   justify-content center
   align-items center
-  height calc(100vh - 40px)
+  height calc(100vh - 35px - 140px)
 
-.ChatStatus
+.chatStatus
+  display flex
+  align-items center
+  height 60px
+  background-color #179790
+  border-bottom 1px solid #AEAEAE
+  color #FFFFFF
+  padding-left 20px
+  padding-right 15px
+  svg
+    font-size 1.5rem
+    margin-left 8px
+    opacity .6
+    cursor pointer
+    &:hover
+      opacity 1
+
+
+.masterInfo
+  height 50px
+  display flex
+  align-items center
+  width 200px
+.roomName
   display flex
   justify-content center
+  align-items center
+  width 510px
+  height 50px
+.controls
+  width calc(100% - 511px - 200px)
+  display flex
+  justify-content flex-end
+
+
+.chatInput
+  height 80px
+  background-color #FFFFFF
+  border-top 1px solid #AEAEAE
+  box-shadow 0px 0px 5px 3px #D9D9D9
+  display flex
+  align-items center
+  ::-webkit-input-placeholder
+    color #7A7B7D
+    padding-left 5px
+    text-align left
+  input
+    margin-left 60px
+    width 800px
+    height 40px
+    font-size 1rem
+    border none
+    background transparent
+    border-bottom 2.4px solid #179790
+    &:focus
+      outline none
+  svg
+    margin-left 30px
+    font-size 1.6rem
+    fill #179790
+    cursor pointer

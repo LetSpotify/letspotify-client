@@ -20,6 +20,7 @@
   img
     max-width 180px
     height auto
+    -webkit-user-select none
 
 .blank
   height 30px
@@ -68,13 +69,14 @@
     position absolute
     margin-top 16px
     margin-left calc(50% - 15.6px)
+    opacity .6
     transition all .3s ease
   span
     position absolute
     font-size 1.2rem
     line-height 70px
     opacity 0
-    margin-left 120px
+    margin-left 130px
   &:hover
     background-color #F5F5F5
     cursor pointer
@@ -83,4 +85,5 @@
       transition all .5s .2s ease
     svg
       margin-left 60px
+      opacity 1
       transition all .5s ease

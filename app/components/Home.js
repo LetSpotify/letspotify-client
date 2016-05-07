@@ -46,7 +46,7 @@ export default class Home extends Component {
       const currentLocalStatus = this.props.localPlayStatus;
       const current = currentLocalStatus.time - currentLocalStatus.position;
       const local = localStatus.time - localStatus.position;
-      const needSync = Math.abs(current - local) > 5;
+      const needSync = localStatus.playing && Math.abs(current - local) > 5;
       if (currentLocalStatus.uri !== localStatus.uri || currentLocalStatus.playing !== localStatus.playing || needSync) {
         this.props.updateLocalPlayStatus(localStatus);
         var sendStatus = localStatus;

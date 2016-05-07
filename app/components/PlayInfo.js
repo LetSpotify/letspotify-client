@@ -95,7 +95,7 @@ export default class PlayInfo extends Component {
         </ul>
         <div className={styles.leaveRoom} onClick={this.props.leaveRoom}>
           <MdExitToApp />
-          <span>Leave</span>
+          <span>Exit</span>
         </div>
       </div>
     );

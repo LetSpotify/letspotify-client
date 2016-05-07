@@ -49,7 +49,7 @@ export default class HomePage extends Component {
           </div>
           <div className="windowStatus">
             <div className="windowTitle">
-              <div className="status">LetSpotify</div>
+              <div className="status"></div>
             </div>
             <div className="windowUserSection">
               {
@@ -57,7 +57,7 @@ export default class HomePage extends Component {
                 <div className="userInfo">
                   <span>{this.props.userInfo.name}</span>
                   <img src={"https://graph.facebook.com/" +this.props.userInfo.fid + "/picture?type=large"} className="userPic"></img>
-                  <i onClick={this.handleUserMenu} className="toggleMenu fa fa-chevron-down" />
+                  <i onBlur={this.handleUserMenu} onClick={this.handleUserMenu} className="toggleMenu fa fa-chevron-down" />
                   {
                     this.props.menuOpen ?
                       <div className="userMenu">
