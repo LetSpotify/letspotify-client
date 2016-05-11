@@ -27,8 +27,8 @@ export default class RoomChat extends Component {
             <CopyToClipboard text={this.props.curRoomID}>
               <MdShare data-tip data-delay-show='200' data-for='share'/>
             </CopyToClipboard>
-            <ReactTooltip id='share' place='left' effect='solid'>
-              <span>Copy Room ID</span>
+            <ReactTooltip id='share' place='bottom' effect='solid'>
+              <span>Copy ID</span>
             </ReactTooltip>
             <MdSettings />
           </div>

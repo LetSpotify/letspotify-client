@@ -22,7 +22,8 @@ export const getUserRoomList = createAction('GET_USER_ROOM_LIST', WebAPIUtil.get
 export const sendLocalPlayStatus = createAction('SEND_LOCAL_PLAY_STATUS', WebAPIUtil.sendInfo);
 export const localStatusError = createAction('LOCAL_STATUS_ERROR');
 export const initSuccess = createAction('INIT_SUCCESS');
-export const toggleMenu = createAction('TOGGLE_MENU');
+export const toggleUserMenu = createAction('TOGGLE_USER_MENU');
+export const closeUserMenu = createAction('CLOSE_USER_MENU');
 
 export const getSpotifyOAuthToken = createAction('GET_SPOTIFY_OAUTH_TOKEN');
 export const getSpotifyCSRFToken = createAction('GET_SPOTIFY_CSRF_TOKEN');

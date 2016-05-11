@@ -8,7 +8,6 @@ export default class Login extends Component {
   constructor(props) {
     super(props);
     this.handleLogin = this.handleLogin.bind(this);
-    this.handleClick = this.handleClick.bind(this);
     var that = this;
     var validateToken = setInterval(function () {
       if (that.props.loginInfo.token !== "") {
@@ -42,10 +41,6 @@ export default class Login extends Component {
     }
   }
 
-  handleClick(e) {
-    console.log('click');
-  }
-
   render() {
     return (
       <div className={styles.loginPage}>
@@ -53,7 +48,7 @@ export default class Login extends Component {
           <div className={styles.cardTopSkew}>
           </div>
           <div className={styles.loginSection}>
-            <h3 onClick={this.handleClick}>{this.props.status === "login" ? "Login to continue....." : "Please wait"}</h3>
+            <h3>{this.props.status === "login" ? "Login to continue....." : "Please wait"}</h3>
             <div className={this.props.status === "login" ? styles.loginButton : styles.loginPending} onClick={this.handleLogin}>
               <div></div>
               <div></div>

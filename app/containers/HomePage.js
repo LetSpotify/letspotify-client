@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import Home from '../components/Home';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -9,11 +9,6 @@ const remote = require('remote');
 
 export default class HomePage extends Component {
 
-  static propTypes = {
-    curRoomID: PropTypes.string.isRequired,
-    userInfo: PropTypes.object.isRequired,
-    roomList: PropTypes.array.isRequired
-  };
 
   constructor(props) {
     super(props);
@@ -21,11 +16,19 @@ export default class HomePage extends Component {
     this.handleMinimize = this.handleMinimize.bind(this);
     this.handleFullScreen = this.handleFullScreen.bind(this);
     this.handleUserMenu = this.handleUserMenu.bind(this);
+    this.handleCloseMenu = this.handleCloseMenu.bind(this);
+    window.addEventListener('click', this.handleCloseMenu);
   }
 
   handleQuit(e) {
     e.preventDefault();
     remote.getCurrentWindow().close();
+  }
+
+  handleCloseMenu(e) {
+    if (e.target !== this.refs.menuToggle) {
+      this.props.closeUserMenu();
+    }
   }
 
   handleMinimize(e) {
@@ -38,7 +41,7 @@ export default class HomePage extends Component {
   }
 
   handleUserMenu(e) {
-    this.props.toggleMenu();
+    this.props.toggleUserMenu();
   }
 
   render() {
@@ -57,7 +60,7 @@ export default class HomePage extends Component {
                 <div className="userInfo">
                   <span>{this.props.userInfo.name}</span>
                   <img src={"https://graph.facebook.com/" +this.props.userInfo.fid + "/picture?type=large"} className="userPic"></img>
-                  <i onBlur={this.handleUserMenu} onClick={this.handleUserMenu} className="toggleMenu fa fa-chevron-down" />
+                  <i ref='menuToggle' onBlur={this.handleUserMenu} onClick={this.handleUserMenu} className="toggleMenu fa fa-chevron-down" />
                   {
                     this.props.menuOpen ?
                       <div className="userMenu">

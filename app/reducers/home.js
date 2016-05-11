@@ -311,10 +311,16 @@ export default handleActions({
       status: "login"
     };
   },
-  TOGGLE_MENU: (state, action) => {
+  TOGGLE_USER_MENU: (state, action) => {
     return {
       ...state,
       menuOpen: !state.menuOpen
+    }
+  },
+  CLOSE_USER_MENU: (state, action) => {
+    return {
+      ...state,
+      menuOpen: false
     }
   },
   default: {
