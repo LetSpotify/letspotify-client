@@ -17,7 +17,7 @@ const router = routerMiddleware(hashHistory);
 
 const enhancer = compose(
   applyMiddleware(thunk, promiseMiddleware, router, logger),
-  DevTools.instrument(),
+  //DevTools.instrument(),
   persistState(
     window.location.href.match(
       /[?&]debug_session=([^&]+)\b/
