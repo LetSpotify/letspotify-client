@@ -6,7 +6,6 @@ import * as HomeActions from '../actions/home';
 import CopyToClipboard from 'react-copy-to-clipboard';
 const remote = require('remote');
 
-
 export default class HomePage extends Component {
 
 

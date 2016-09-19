@@ -1,8 +1,8 @@
 import fetch from 'isomorphic-fetch';
 import $ from "jquery";
-const roomUrl = 'https://api.letspotify.com/rooms';
-const authUrl = 'https://api.letspotify.com/auth';
-const userUrl = 'https://api.letspotify.com/user';
+const roomUrl = 'http://kevchentw.nctu.me:8888/rooms';
+const authUrl = 'http://kevchentw.nctu.me:8888/auth';
+const userUrl = 'http://kevchentw.nctu.me:8888/user';
 const spotifyUrl = 'https://api.spotify.com/v1/tracks/';
 
 const WebAPIUtil = {

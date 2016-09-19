@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styles from './Login.styl';
 const shell = require('electron').shell;
-const oauthUrl = 'https://api.letspotify.com/auth/facebook/login'
+const oauthUrl = 'http://kevchentw.nctu.me:8888/auth/facebook/login'
 
 export default class Login extends Component {
 

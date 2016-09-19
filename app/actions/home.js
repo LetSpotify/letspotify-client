@@ -25,6 +25,8 @@ export const initSuccess = createAction('INIT_SUCCESS');
 export const toggleUserMenu = createAction('TOGGLE_USER_MENU');
 export const closeUserMenu = createAction('CLOSE_USER_MENU');
 
+
+
 export const getSpotifyOAuthToken = createAction('GET_SPOTIFY_OAUTH_TOKEN');
 export const getSpotifyCSRFToken = createAction('GET_SPOTIFY_CSRF_TOKEN');
 export const updateLocalPlayStatus = createAction('UPDATE_LOCAL_PLAY_STATUS');
